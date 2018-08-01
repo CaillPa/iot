@@ -1,0 +1,88 @@
+{% extends "layout.html" %} {% block title %}Accueil{% endblock %} {% block body %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/iot.js') }}"></script>
+{% include 'navbar.html' %}
+{% block navbar %} {% endblock %}
+<br>
+
+<div class="card">
+    <h5 class="card-header">Contrôle manuel</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <h3>LED R</h3>
+            </div>
+            <div class="col-md">
+                <label class="switch">
+                    <input type="checkbox" id=ledr onclick="checkCheckbox(this);">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="col-md"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <h3>LED G</h3>
+            </div>
+            <div class="col-md">
+                <label class="switch">
+                    <input type="checkbox" id=ledg onclick="checkCheckbox(this);">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="col-md"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <h3>Buzzer</h3>
+            </div>
+            <div class="col-md">
+                <label class="switch">
+                    <input type="checkbox" id=buzzer onclick="checkCheckbox(this);">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="col-md"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <h3>Servo</h3>
+            </div>
+            <div class="col-md">
+                <input type="range" id=servo min="0" max="180" step="10" />
+            </div>
+            <div class="col-md"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <h3>LCD</h3>
+            </div>
+            <div class="col-md">
+                <input type="text" size="16" id=lcd />
+            </div>
+            <div class="col-md"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <h3>RFID</h3>
+            </div>
+            <div class="col-md">
+                <span id=rfid></span>
+            </div>
+            <div class="col-md"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

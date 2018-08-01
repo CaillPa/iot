@@ -1,0 +1,89 @@
+{% extends "layout.html" %} {% block title %}Logs{% endblock %} {% block body %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/logs.js') }}"></script>
+{% include 'navbar.html' %}
+{% block navbar %} {% endblock %}
+<br>
+
+<div class="card">
+    <h5 class="card-header">Logs système</h5>
+    <div class="card-body">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" href="#rfid" data-toggle="tab">RFID</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#msg" data-toggle="tab">Messages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#aut" data-toggle="tab">Autorisations</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="rfid" role="tabpanel" aria-labelledby="rfid-tab">
+                <table class="table" id="rfid_table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Badge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tab-pane fade" id="msg" role="tabpanel" aria-labelledby="msg-tab">
+                <br>
+                <div class="row">
+                    <div class="col-md">
+                        <input type="text" id='n_msg' placeholder='Message' class="form-control"/>
+                    </div>
+                    <div class="col-md">
+                        <button type="button" class="btn btn-outline-primary" id="aj_message">Changer</button>
+                    </div>
+                </div>
+                <br>
+                <table class="table" id="msg_table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tab-pane fade" id="aut" role="tabpanel" aria-labelledby="aut-tab">
+                <br>
+                <div class="row">
+                    <div class="col-md">
+                        <input type="text" id='n_badge' placeholder='Badge' class="form-control"/>
+                    </div>
+                    <div class="col-md">
+                        <button type="button" class="btn btn-outline-primary" id="aj_badge">Ajouter</button>
+                    </div>
+                </div>
+                <br>
+                <table class="table" id="auth_table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Badges autorisés</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
